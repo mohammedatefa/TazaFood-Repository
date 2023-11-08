@@ -20,19 +20,10 @@ namespace TazaFood_Repository.Repository
         {
             context = _context;
         }
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IEnumerable<T>> GetAll()
         {
-
             return await context.Set<T>().ToListAsync();
         }
-
-        public async Task<T> GetByIdAsync(int id)
-        {
-            //return await context.Set<T>().Where(t => t.Id == id).FirstOrDefaultAsync();
-            return await context.Set<T>().FindAsync(id);
-        }
-
-
 
         #region get model using specification
         public async Task<IEnumerable<T>> GetAllWithSpec(ISpecification<T> spec)
@@ -50,5 +41,23 @@ namespace TazaFood_Repository.Repository
             return specificationEvaluter<T>.GetQuery(context.Set<T>(), specification);
         }
         #endregion
+
+        public async Task Add(T entity)
+        {
+            if (entity is not null)
+            {
+                try
+                {
+                    await context.Set<T>().AddAsync(entity);
+                    await context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("there is error occured during add new item in the data base",ex);
+                    
+                }
+            }
+            
+        }
     }
 }
