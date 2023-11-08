@@ -1,0 +1,170 @@
+[
+  {
+    "Name": "Mahshi",
+    "Description": "Mahshi, also called Mashi or Mashy, is a green dish including many vegetables such as eggplants, zucchini, bell peppers, cabbage, tomatoes, etc., stuffed with a unique filling. The filling contains mainly rice, herbs, spices, tomato sauce, and cinnamon",
+    "Price": 100,
+    "ImageUrl": "images/products/Mahshi.webp",
+    "CategoryId": 1,
+    "Rate": 5
+  },
+  {
+    "Name": "Molokhia",
+    "Description": "Made from the leaves of the Corchorus plant or jute mallow, this leafy vegetable takes center stage in a soup",
+    "Price": 35,
+    "ImageUrl": "images/products/green-slimy-soup.webp",
+    "CategoryId": 1,
+    "Rate": 5
+  },
+  {
+    "Name": "Feteer Meshaltet",
+    "Description": "It contains many dough layers topped with thousand options of toppings with sweet (coconut, nutella, chocolate, syrup, honey, sugar) or savory (minced meats, cheese, vegetables) flavors",
+    "Price": 115,
+    "ImageUrl": "images/products/egyptian-cushioned-pie.webp",
+    "CategoryId": 3,
+    "Rate": 5
+  },
+  {
+    "Name": "Bamya",
+    "Description": "This dish features okra, the star ingredient, and tender lamb immersed in a rich tomato sauce",
+    "Price": 60,
+    "ImageUrl": "images/products/bamya-egyptian-okra-stew.jpg",
+    "CategoryId": 1,
+    "Rate": 5
+  },
+  {
+    "Name": "Basbousa",
+    "Description": "The rich flavors of semolina, yogurt, and coconut. This irresistible confection derives its luscious sweetness from a unique syrup infused with the enchanting essences of orange flowers or rose extract.",
+    "Price": 70,
+    "ImageUrl": "images/products/coconut-yogurt-semolina-cake.webp",
+    "CategoryId": 3,
+    "Rate": 5
+  },
+  {
+    "Name": "Macarona Béchamel",
+    "Description": "A treat from heaven with three filling layers of casserole. The deepest layer includes boiled Penne pasta. The middle layer is usually beef mixed with tomato sauce and some onions. The top of it is white Béchamel sauce.",
+    "Price": 110,
+    "ImageUrl": "images/products/egyptian-baked-pasta.webp",
+    "CategoryId": 2,
+    "Rate": 5
+  },
+  {
+    "Name": "Hummus",
+    "Description": "Hummus is a delectable dip made from mashed chickpeas with other ingredients such as olive oils, garlic, parsley, cumin, tahini, paprika",
+    "Price": 30,
+    "ImageUrl": "images/products/Hummus.webp",
+    "CategoryId": 1,
+    "Rate": 3
+  },
+  {
+    "Name": "Shakshouka",
+    "Description": "Savor the taste of eggs poached in a mouthwatering tomato sauce infused with garlic, bell peppers, onions, green pepper, and olive oil.",
+    "Price": 35,
+    "ImageUrl": "images/products/egyptian-shakshouka.jpg",
+    "CategoryId": 1,
+    "Rate": 3
+  },
+  {
+    "Name": "Baklava",
+    "Description": "Baklava features crispy sheets of phyllo pastry meticulously arranged with a medley of chopped nuts, including pistachios, walnuts, and hazelnuts, accompanied by rich butter and aromatic spices.",
+    "Price": 115,
+    "ImageUrl": "images/products/egyptian-baklava.webp",
+    "CategoryId": 3,
+    "Rate": 3
+  },
+  {
+    "Name": "Baba Ghanoush",
+    "Description": "Baba Ghanoush, or Baba Ghanouj, with eggplant as the primary ingredient. It also includes olive oil, garlic, lemon juice, and other herbs and spices like Hummus.",
+    "Price": 200,
+    "ImageUrl": "images/products/baba-ghanoush.webp",
+    "CategoryId": 1,
+    "Rate": 4
+  },
+  {
+    "Name": "Hamam Mahshi",
+    "Description": "It includes squab (small pigeon) stuffed with freekeh, onions, and seasonings.",
+    "Price": 160,
+    "ImageUrl": "images/products/hamam-mahshi.webp",
+    "CategoryId": 2,
+    "Rate": 4
+  },
+  {
+    "Name": "Kebab and Kofta",
+    "Description": "A heavenly union between two of the most delicious dishes ever created – kebab and kofta. Kebab is known for its tender pieces of meat, grilled to perfection on a coal fire, and typically paired with rice, vegetables, or bread.",
+    "Price": 450,
+    "ImageUrl": "images/products/egyptian-meatballs.webp",
+    "CategoryId": 2,
+    "Rate": 4
+  },
+  {
+    "Name": "Fattah ",
+    "Description": "The dish includes a lot of flatbread pieces dipped in various components, which may vary but usually are rice, lamb, and garlic tomato or vinegar sauce",
+    "Price": 110,
+    "ImageUrl": "images/products/pita-with-chickpeas.webp",
+    "CategoryId": 2,
+    "Rate": 4
+  },
+  {
+    "Name": "Shawarma",
+    "Description": "The tantalizing flavors arise from the thin, heavily-spiced slices of meat – be it beef, lamb, chicken, or mutton – pierced and assembled onto a vertical skewer",
+    "Price": 50,
+    "ImageUrl": "images/products/egyptian-sandwiches.webp",
+    "CategoryId": 2,
+    "Rate": 4
+  },
+  {
+    "Name": "Konafa",
+    "Description": "Featuring shredded phyllo pastry layers filled with either cheese or cream, Konafa is a mouthwatering treat that comes in various sizes",
+    "Price": 80,
+    "ImageUrl": "images/products/egyptian-cake.webp",
+    "CategoryId": 3,
+    "Rate": 4
+  },
+  {
+    "Name": "Umm Ali",
+    "Description": "Umm Ali is soaked in a mixture of milk and sugar, resulting in a lighter, milkier texture compared to traditional bread puddings.",
+    "Price": 70,
+    "ImageUrl": "images/products/egyptian-bread-pudding.webp",
+    "CategoryId": 3,
+    "Rate": 4
+  },
+  {
+    "Name": "Kahk",
+    "Description": "Creating a brittle yet deliciously delicate experience. Each biscuit can be enjoyed plain or adorned with ornamental patterns and designs.",
+    "Price": 140,
+    "ImageUrl": "images/products/aleid-kahk.webp",
+    "CategoryId": 3,
+    "Rate": 4
+  },
+  {
+    "Name": "Qatayef",
+    "Description": "This dish includes mini deep-fried semolina-yeast pancakes filled with cream and nuts.",
+    "Price": 55,
+    "ImageUrl": "images/products/mini-pancakes.webp",
+    "CategoryId": 3,
+    "Rate": 4
+  },
+  {
+    "Name": "Roz Bel Laban",
+    "Description": "Includes short-grain rice, rose water, butter, milk, vanilla, cinnamon, nutmeg, and sugar.",
+    "Price": 45,
+    "ImageUrl": "images/products/egyptian-rice-pudding.webp",
+    "CategoryId": 3,
+    "Rate": 4
+  },
+  {
+    "Name": "Ghorayeba",
+    "Description": "Made from three common ingredients: flour, ghee, and sugar in powder form.",
+    "Price": 150,
+    "ImageUrl": "images/products/egyptian-shortbread-cookie.webp",
+    "CategoryId": 3,
+    "Rate": 4
+  },
+  {
+    "Name": "Kushari",
+    "Description": "Kushari is a very delicious vegan dish from the legendary Egyptian culinary dating back to the early days of the Islamic era in Egypt. It consists of food consists of rice, lentils, onions, garlic, chickpeas, and tomato sauce",
+    "Price": 60,
+    "ImageUrl": "images/products/Koshery.jpeg",
+    "CategoryId": 1,
+    "Rate": 4
+  }
+]
