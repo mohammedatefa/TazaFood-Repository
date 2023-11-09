@@ -19,6 +19,11 @@ namespace TazaFood_Repository.SpecificationEvaluter
                 query = query.Where(spec.Ceritaria);
             }
 
+            if(spec.OrderBy is not null)
+            {
+                query = query.OrderByDescending(spec.OrderBy);
+            }
+
             query = spec.Includes.Aggregate(query, (current, includeexpression) => current.Include(includeexpression));
 
             return query;
