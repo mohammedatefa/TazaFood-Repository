@@ -20,7 +20,9 @@ namespace TazaFood_Repository.Repository
         {
             context = _context;
         }
-        public async Task<IEnumerable<T>> GetAll()
+
+
+        public async Task<IReadOnlyList<T>> GetAll()
         {
             return await context.Set<T>().ToListAsync();
         }
@@ -31,7 +33,7 @@ namespace TazaFood_Repository.Repository
         }
 
         #region get model using specification
-        public async Task<IEnumerable<T>> GetAllWithSpec(ISpecification<T> spec)
+        public async Task<IReadOnlyList<T>> GetAllWithSpec(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).ToListAsync();
         }
@@ -39,8 +41,12 @@ namespace TazaFood_Repository.Repository
         public async Task<T> GetByIdWithSpec(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).FirstOrDefaultAsync();
-        } 
+        }
 
+        public async Task<int> GetCountWithSpec(ISpecification<T> spec)
+        {
+            return await ApplySpecification(spec).CountAsync();
+        }
         private IQueryable<T> ApplySpecification(ISpecification<T> specification)
         {
             return specificationEvaluter<T>.GetQuery(context.Set<T>(), specification);
