@@ -30,6 +30,7 @@ namespace TazaFood_Repository.Repository
             return await context.Set<T>().FindAsync(id);
         }
 
+
         #region get model using specification
         public async Task<IEnumerable<T>> GetAllWithSpec(ISpecification<T> spec)
         {
@@ -65,7 +66,7 @@ namespace TazaFood_Repository.Repository
             
         }
 
-        public async Task Update(int id, T entity)
+        public async Task<bool> Update(int id, T entity)
         {
             var found = context.Set<T>().Find(id);
             if(found is not null)
@@ -74,19 +75,17 @@ namespace TazaFood_Repository.Repository
                 {
                     context.Set<T>().Update(entity);
                     await context.SaveChangesAsync();
+                    return  true;
                 }
                 catch (Exception ex)
                 {
                     throw new Exception("there is error occured during add new item in the data base", ex);
-
                 }
-
             }
-
-
+            return false;
         }
 
-        public async Task Delete(int id)
+        public async Task<bool> Delete(int id)
         {
             var found = context.Set<T>().Find(id);
             if(found is not null)
@@ -95,6 +94,7 @@ namespace TazaFood_Repository.Repository
                 {
                     context.Set<T>().Remove(found);
                     await context.SaveChangesAsync();
+                    return true;
                 }
                 catch (Exception ex)
                 {
@@ -102,8 +102,9 @@ namespace TazaFood_Repository.Repository
                     throw new Exception("there is error occured during add new item in the data base", ex);
                 }
             }
+            return false;
         }
 
-       
+
     }
 }
