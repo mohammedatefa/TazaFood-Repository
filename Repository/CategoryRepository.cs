@@ -18,9 +18,9 @@ namespace TazaFood_Repository.Repository
         {
             context = _context;
         }
-        public async Task<Category> GetByName(string name)
+        public async Task<List<Category>> GetByName(string name)
         {
-            return await context.Set<Category>().FirstOrDefaultAsync(C => C.Name == name);
+            return await context.Set<Category>().Where(C => C.Name.Contains(name)).ToListAsync();
         }
     }
 }
