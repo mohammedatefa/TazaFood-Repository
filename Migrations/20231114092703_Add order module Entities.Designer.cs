@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TazaFood_Repository.Context;
 
@@ -11,9 +12,11 @@ using TazaFood_Repository.Context;
 namespace TazaFood_Repository.Migrations
 {
     [DbContext(typeof(TazaDbContext))]
-    partial class TazaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231114092703_Add order module Entities")]
+    partial class AddordermoduleEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,7 +71,7 @@ namespace TazaFood_Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DeliveryMethods");
+                    b.ToTable("DeliveryMethod");
                 });
 
             modelBuilder.Entity("TazaFood_Core.Models.Order_Aggregate.Order", b =>
@@ -104,7 +107,7 @@ namespace TazaFood_Repository.Migrations
 
                     b.HasIndex("DeliveryMethodId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("TazaFood_Core.Models.Order_Aggregate.OrderItem", b =>
@@ -128,7 +131,7 @@ namespace TazaFood_Repository.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItem");
                 });
 
             modelBuilder.Entity("TazaFood_Core.Models.Product", b =>
@@ -194,7 +197,7 @@ namespace TazaFood_Repository.Migrations
 
                             b1.HasKey("OrderId");
 
-                            b1.ToTable("Orders");
+                            b1.ToTable("Order");
 
                             b1.WithOwner()
                                 .HasForeignKey("OrderId");
@@ -230,7 +233,7 @@ namespace TazaFood_Repository.Migrations
 
                             b1.HasKey("OrderItemId");
 
-                            b1.ToTable("OrderItems");
+                            b1.ToTable("OrderItem");
 
                             b1.WithOwner()
                                 .HasForeignKey("OrderItemId");

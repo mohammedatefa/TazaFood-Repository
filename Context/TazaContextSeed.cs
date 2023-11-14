@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using TazaFood_Core.Models;
+using TazaFood_Core.Models.Order_Aggregate;
 
 namespace TazaFood_Repository.Context
 {
@@ -43,6 +44,24 @@ namespace TazaFood_Repository.Context
                     foreach (var product in products)
                     {
                         await context.Set<Product>().AddAsync(product);
+                    }
+                    await context.SaveChangesAsync();
+                }
+            }
+
+            //then add delivery,ethods data 
+            //first check if there is data in the deliverymethods table or not 
+            if (!context.Set<DeliveryMethod>().Any())
+            {
+                var Deliverydata = File.ReadAllText("../TazaFood-Repository/Context/DataSeed/delivery.json");
+                var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(Deliverydata);
+
+
+                if (methods?.Count > 0 && methods is not null)
+                {
+                    foreach (var method in methods)
+                    {
+                        await context.Set<DeliveryMethod>().AddAsync(method);
                     }
                     await context.SaveChangesAsync();
                 }

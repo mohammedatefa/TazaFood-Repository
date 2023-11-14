@@ -61,7 +61,7 @@ namespace TazaFood_Repository.Repository
                 try
                 {
                     await context.Set<T>().AddAsync(entity);
-                    await context.SaveChangesAsync();
+                   
                 }
                 catch (Exception ex)
                 {
@@ -80,7 +80,6 @@ namespace TazaFood_Repository.Repository
                 try
                 {
                     context.Set<T>().Update(entity);
-                    await context.SaveChangesAsync();
                     return  true;
                 }
                 catch (Exception ex)
@@ -99,7 +98,6 @@ namespace TazaFood_Repository.Repository
                 try
                 {
                     context.Set<T>().Remove(found);
-                    await context.SaveChangesAsync();
                     return true;
                 }
                 catch (Exception ex)
