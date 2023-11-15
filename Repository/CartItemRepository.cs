@@ -12,7 +12,7 @@ namespace TazaFood_Repository.Repository
 {
     public class CartItemRepository : ICartItemsRepository
     {
-        private readonly IDatabase _database;
+        private readonly IDatabase _database; 
         public CartItemRepository(IConnectionMultiplexer multiplexer)
         {
             _database=multiplexer.GetDatabase();
