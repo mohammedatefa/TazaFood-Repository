@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TazaFood_Repository.Context;
 
@@ -11,9 +12,11 @@ using TazaFood_Repository.Context;
 namespace TazaFood_Repository.Migrations
 {
     [DbContext(typeof(TazaDbContext))]
-    partial class TazaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231114093617_Add order module Entities-2")]
+    partial class AddordermoduleEntities2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
