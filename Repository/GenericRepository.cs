@@ -90,10 +90,28 @@ namespace TazaFood_Repository.Repository
             return false;
         }
 
+        public async Task<bool> Delete(T entity)
+        {
+            var found = context.Set<T>().FirstOrDefault(f=>f.Id==entity.Id);
+            if(found is not null)
+            {
+                try
+                {
+                    context.Set<T>().Remove(found);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+
+                    throw new Exception("there is error occured during add new item in the data base", ex);
+                }
+            }
+            return false;
+        }
         public async Task<bool> Delete(int id)
         {
             var found = context.Set<T>().Find(id);
-            if(found is not null)
+            if (found is not null)
             {
                 try
                 {
