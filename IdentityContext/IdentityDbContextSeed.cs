@@ -10,23 +10,6 @@ namespace TazaFood_Repository.IdentityContext
 {
     public static class IdentityDbContextSeed
     {
-        public static async Task AppUserAsync(UserManager<AppUser> usermanger)
-        {
-            if (!usermanger.Users.Any())
-            {
-                var user = new AppUser()
-                {
-                    DisplayName = "mohamed atef",
-                    UserName = "mohamed.atef",
-                    Email = "admin@gmail.com",
-                    PhoneNumber = "01156985081"
-                };
-            
-                await usermanger.CreateAsync(user,"admin123");
-            }
-
-        }
-
         public static async Task AppRoleAsync(RoleManager<IdentityRole> roleManger)
         {
             if (!roleManger.Roles.Any())
@@ -39,6 +22,23 @@ namespace TazaFood_Repository.IdentityContext
             }
 
         }
+        public static async Task AppUserAsync(UserManager<AppUser> usermanger)
+        {
+            if (!usermanger.Users.Any())
+            {
+                var user = new AppUser()
+                {
+                    DisplayName = "mohamed atef",
+                    UserName = "mohamed.atef",
+                    Email = "admin@gmail.com",
+                    PhoneNumber = "01156985081"
+                };
+                await usermanger.CreateAsync(user,"admin123");
+            }
+
+        }
+
+       
 
 
     }
