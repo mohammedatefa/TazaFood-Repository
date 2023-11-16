@@ -24,6 +24,22 @@ namespace TazaFood_Repository.IdentityContext
             
                 await usermanger.CreateAsync(user,"admin123");
             }
+
         }
+
+        public static async Task AppRoleAsync(RoleManager<IdentityRole> roleManger)
+        {
+            if (!roleManger.Roles.Any())
+            {
+                var Role = new IdentityRole();
+
+                Role.Name = "Admin";
+
+                await roleManger.CreateAsync(Role);
+            }
+
+        }
+
+
     }
 }
