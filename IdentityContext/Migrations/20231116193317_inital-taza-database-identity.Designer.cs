@@ -12,8 +12,8 @@ using TazaFood_Repository.IdentityContext;
 namespace TazaFood_Repository.IdentityContext.Migrations
 {
     [DbContext(typeof(IdentityContext))]
-    [Migration("20231111194218_create database of identity")]
-    partial class createdatabaseofidentity
+    [Migration("20231116193317_inital-taza-database-identity")]
+    partial class initaltazadatabaseidentity
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

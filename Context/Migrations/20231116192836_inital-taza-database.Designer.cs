@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TazaFood_Repository.Context;
 
 #nullable disable
 
-namespace TazaFood_Repository.Migrations
+namespace TazaFood_Repository.Context.Migrations
 {
     [DbContext(typeof(TazaDbContext))]
-    partial class TazaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231116192836_inital-taza-database")]
+    partial class initaltazadatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,7 +71,7 @@ namespace TazaFood_Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DeliveryMethods");
+                    b.ToTable("DeliveryMethod");
                 });
 
             modelBuilder.Entity("TazaFood_Core.Models.Order_Aggregate.Order", b =>

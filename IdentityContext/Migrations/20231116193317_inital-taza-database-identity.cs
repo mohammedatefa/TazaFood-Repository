@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TazaFood_Repository.IdentityContext.Migrations
 {
     /// <inheritdoc />
-    public partial class createdatabaseofidentity : Migration
+    public partial class initaltazadatabaseidentity : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

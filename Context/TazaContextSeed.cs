@@ -49,8 +49,8 @@ namespace TazaFood_Repository.Context
                 }
             }
 
-            //then add delivery,ethods data 
-            //first check if there is data in the deliverymethods table or not 
+            //then add delivery,ethods data
+            //first check if there is data in the deliverymethods table or not
             if (!context.Set<DeliveryMethod>().Any())
             {
                 var Deliverydata = File.ReadAllText("../TazaFood-Repository/Context/DataSeed/delivery.json");
@@ -62,6 +62,24 @@ namespace TazaFood_Repository.Context
                     foreach (var method in methods)
                     {
                         await context.Set<DeliveryMethod>().AddAsync(method);
+                    }
+                    await context.SaveChangesAsync();
+                }
+            }
+
+            //then add Reviews data
+            //first check if there is data in the reviews table or not
+            if (!context.Set<Review>().Any())
+            {
+                var reviewsData = File.ReadAllText("../TazaFood-Repository/Context/DataSeed/reviews.json");
+                var reviews = JsonSerializer.Deserialize<List<Review>>(reviewsData);
+
+
+                if (reviews?.Count > 0 && reviews is not null)
+                {
+                    foreach (var review in reviews)
+                    {
+                        await context.Set<Review>().AddAsync(review);
                     }
                     await context.SaveChangesAsync();
                 }

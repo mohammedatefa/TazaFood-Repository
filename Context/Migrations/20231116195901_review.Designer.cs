@@ -9,11 +9,11 @@ using TazaFood_Repository.Context;
 
 #nullable disable
 
-namespace TazaFood_Repository.Migrations
+namespace TazaFood_Repository.Context.Migrations
 {
     [DbContext(typeof(TazaDbContext))]
-    [Migration("20231114092703_Add order module Entities")]
-    partial class AddordermoduleEntities
+    [Migration("20231116195901_review")]
+    partial class review
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -71,7 +71,7 @@ namespace TazaFood_Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DeliveryMethod");
+                    b.ToTable("DeliveryMethods");
                 });
 
             modelBuilder.Entity("TazaFood_Core.Models.Order_Aggregate.Order", b =>
@@ -107,7 +107,7 @@ namespace TazaFood_Repository.Migrations
 
                     b.HasIndex("DeliveryMethodId");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("TazaFood_Core.Models.Order_Aggregate.OrderItem", b =>
@@ -131,7 +131,7 @@ namespace TazaFood_Repository.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderItem");
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("TazaFood_Core.Models.Product", b =>
@@ -170,6 +170,23 @@ namespace TazaFood_Repository.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("TazaFood_Core.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("TazaFood_Core.Models.Order_Aggregate.Order", b =>
                 {
                     b.HasOne("TazaFood_Core.Models.Order_Aggregate.DeliveryMethod", "DeliveryMethod")
@@ -197,7 +214,7 @@ namespace TazaFood_Repository.Migrations
 
                             b1.HasKey("OrderId");
 
-                            b1.ToTable("Order");
+                            b1.ToTable("Orders");
 
                             b1.WithOwner()
                                 .HasForeignKey("OrderId");
@@ -233,7 +250,7 @@ namespace TazaFood_Repository.Migrations
 
                             b1.HasKey("OrderItemId");
 
-                            b1.ToTable("OrderItem");
+                            b1.ToTable("OrderItems");
 
                             b1.WithOwner()
                                 .HasForeignKey("OrderItemId");

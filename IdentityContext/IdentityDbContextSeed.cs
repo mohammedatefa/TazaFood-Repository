@@ -34,6 +34,7 @@ namespace TazaFood_Repository.IdentityContext
                     PhoneNumber = "01156985081"
                 };
                 await usermanger.CreateAsync(user,"admin123");
+                await usermanger.AddToRoleAsync(user, "Admin");
             }
 
         }
